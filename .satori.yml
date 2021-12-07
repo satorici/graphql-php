@@ -1,0 +1,11 @@
+tests:
+    hello:
+        assertStdoutContains: '"hello":"world"'
+        input:
+            - ""
+software:
+    graphql-php:
+        execute: ["curl", "http://127.0.0.1:6000/[[tests]]"]
+        install:
+            - mkdir x; cd x; composer require webonyx/graphql-php -n; mv vendor ../; cd ../
+            - nohup php -S 127.0.0.1:6000 examples/00-hello-world/graphql.php &
