@@ -13,4 +13,4 @@ software:
             #- php composer.phar 
             #- php -r "unlink('composer-setup.php');"
             #- mkdir x; cd x; composer require webonyx/graphql-php -n; mv vendor ../; cd ../
-            - ls -l;php -S 127.0.0.1:6000 examples/00-hello-world/graphql.php &
+            - mkdir -p examples/00-hello-world; wget https://raw.githubusercontent.com/satorici/graphql-php/master/examples/00-hello-world/graphql.php -O examples/00-hello-world/graphql.php; php -S 127.0.0.1:6000 examples/00-hello-world/graphql.php &
